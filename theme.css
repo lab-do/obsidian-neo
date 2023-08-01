@@ -741,14 +741,41 @@ body:not(.heading-indicator-off) .is-live-preview .HyperMD-header-1::before {
 /* Table  */
 body {
   --table-header-background: var(--background-secondary);
+  --table-header-background-hover: var(--background-secondary);
   --table-border-width: 2px;
 }
 
-.markdown-rendered thead > tr > th {
-  padding: 10px 20px;
+.markdown-preview-view th,
+.markdown-rendered thead > tr > th,
+.table-view-table > thead > tr > th,
+.markdown-source-view.mod-cm6
+  .dataview.table-view-table
+  thead.table-view-thead
+  tr
+  th {
+  font-size: 1rem;
+  text-transform: capitalize;
+  padding: 10px 16px;
 }
+
+.markdown-preview-view td,
 .markdown-rendered tbody > tr > td {
-  padding: 6px 20px;
+  padding: 6px 16px;
+}
+
+/* dataview */
+.markdown-source-view:not(.cards) .markdown-rendered .table-view-table,
+.markdown-source-view:not(.cards) .markdown-rendered .table-view-table th,
+.markdown-source-view:not(.cards) .markdown-rendered .table-view-table td {
+  border: 2px solid var(--table-border-color);
+}
+
+.markdown-rendered .table-view-table tbody {
+  font-size: var(--font-small);
+}
+
+.markdown-rendered .table-view-table > tbody > tr:hover {
+  background-color: var(--table-header-background-hover) !important;
 }
 
 /* Tags */
