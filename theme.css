@@ -491,55 +491,21 @@ body {
 }
 
 /*  Scrollbars */
-body {
-  --scrollbar-bg: transparent;
-  --scrollbar-thumb-bg: hsla(252, 100%, 92%, 0.1);
-  --scrollbar-active-thumb-bg: hsla(252, 100%, 92%, 0.15);
-}
-
-body:not(.native-scrollbars, .is-mobile) .prompt-results,
-body:not(.native-scrollbars, .is-mobile) .vertical-tab-header,
-body:not(.native-scrollbars, .is-mobile) .vertical-tab-content-container,
-body:not(.native-scrollbars, .is-mobile) .workspace-leaf {
-  --scrollbar-thumb-bg: var(--scrollbar-thumb-color);
-  animation: fadeOut var(--anim-duration-slow) ease-in forwards;
-}
-
-body:not(.native-scrollbars, .is-mobile) .prompt-results:hover,
-body:not(.native-scrollbars, .is-mobile) .vertical-tab-header:hover,
-body:not(.native-scrollbars, .is-mobile) .vertical-tab-content-container:hover,
-body:not(.native-scrollbars, .is-mobile) .workspace-leaf:hover {
-  animation: fadeIn var(--anim-duration-fast) ease-out forwards;
-}
-
-/* Scrollbars animation */
-@property --scrollbar-thumb-color {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: transparent;
-}
-
-/* todo: use same animation for in and out */
-@keyframes fadeIn {
-  0% {
-    --scrollbar-thumb-color: transparent;
-  }
-  100% {
-    --scrollbar-thumb-color: hsla(252, 100%, 92%, 0.08);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    --scrollbar-thumb-color: hsla(252, 100%, 92%, 0.08);
-  }
-  100% {
-    --scrollbar-thumb-color: transparent;
-  }
-}
-
-/* kanban scrollbars */
 /* from border theme: https://github.com/Akifyss/obsidian-border */
+body {
+  --scrollbar-opacity: 0;
+  --scrollbar-bg: rgba(var(--mono-rgb-100), 0);
+  --scrollbar-thumb-bg: rgba(var(--mono-rgb-100), 0.08);
+  --scrollbar-active-thumb-bg: rgba(var(--mono-rgb-100), 0.15);
+}
+
+.theme-dark {
+  --mono-rgb-100: 255, 255, 255;
+}
+.theme-light {
+  --mono-rgb-100: 0, 0, 0;
+}
+
 body:not(.native-scrollbars) ::-webkit-scrollbar,
 body:not(.native-scrollbars)
   .kanban-plugin__scroll-container::-webkit-scrollbar {
@@ -556,6 +522,21 @@ body:not(.native-scrollbars)
 .mobile-toolbar-options-container::-webkit-scrollbar {
   width: 0 !important;
   height: 0 !important;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-track,
+body:not(.native-scrollbars) ::-webkit-scrollbar-track-piece,
+body:not(.native-scrollbars):not(.is-mobile) ::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+body:not(.native-scrollbars):not(.is-mobile) :hover::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg) !important;
+}
+
+body:not(.native-scrollbars):not(.is-mobile) ::-webkit-scrollbar-thumb:hover,
+body:not(.native-scrollbars):not(.is-mobile) ::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-active-thumb-bg) !important;
 }
 
 body:not(.native-scrollbars)
