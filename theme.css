@@ -1,13 +1,48 @@
 /*───────────────────────────────────────────────────────
 Neo
-Version 0.0.1
+Version 0.0.2
 Created by @labdo_
 ────────────────────────────────────────────────────── */
 
 /* * Colors */
+body {
+  --accent-h: 250;
+  --accent-s: 55%;
+  --accent-l: 60%;
+
+  --h1-color: hsl(var(--accent-h), 52%, 72%);
+  --h2-color: hsl(var(--accent-h), 52%, 68%);
+  --h3-color: hsl(var(--accent-h), 52%, 64%);
+  --h4-color: hsl(var(--accent-h), 50%, 60%);
+  --h5-color: hsl(var(--accent-h), 40%, 52%);
+  --h6-color: hsl(var(--accent-h), 38%, 46%);
+
+  --text-normal: var(--base-15);
+  --text-muted: var(--base-20);
+  --text-faint: var(--base-35);
+  --bold-color: var(--base-10);
+
+  --code-background: var(--background-secondary);
+
+  --inline-title-color: var(--base-05);
+  --tab-active-color: var(--base-40);
+
+  --prompt-border-width: 1px;
+  --prompt-border-color: var(--base-50);
+
+  --indentation-guide-color: var(--base-45);
+  --indentation-guide-color-active: var(--base-35);
+
+  --modal-border-width: 1px;
+  --modal-border-color: var(--base-45);
+
+  --ribbon-background: var(--background-secondary);
+  --ribbon-background-collapsed: var(--background-secondary);
+}
+
 .theme-dark {
   /* base */
-  --base-05: hsl(240, 2%, 93%);
+  /* --base-05: hsl(240, 2%, 93%);
   --base-10: hsl(240, 3%, 82%);
   --base-15: hsl(240, 4%, 75%);
   --base-20: hsl(240, 5%, 65%);
@@ -18,7 +53,20 @@ Created by @labdo_
   --base-45: hsl(240, 10%, 19%);
   --base-50: hsl(240, 11%, 15%);
   --base-55: hsl(240, 15%, 12%);
-  --base-60: hsl(240, 17%, 9%);
+  --base-60: hsl(240, 17%, 9%); */
+
+  --base-05: hsl(var(--accent-h), 2%, 93%);
+  --base-10: hsl(var(--accent-h), 3%, 82%);
+  --base-15: hsl(var(--accent-h), 4%, 75%);
+  --base-20: hsl(var(--accent-h), 5%, 65%);
+  --base-25: hsl(var(--accent-h), 6%, 56%);
+  --base-30: hsl(var(--accent-h), 6%, 46%);
+  --base-35: hsl(var(--accent-h), 7%, 35%);
+  --base-40: hsl(var(--accent-h), 8%, 25%);
+  --base-45: hsl(var(--accent-h), 10%, 19%);
+  --base-50: hsl(var(--accent-h), 11%, 15%);
+  --base-55: hsl(var(--accent-h), 15%, 12%);
+  --base-60: hsl(var(--accent-h), 14%, 7%);
 
   /* base darker */
   /* --base-05: hsl(250, 18%, 93%);
@@ -34,30 +82,18 @@ Created by @labdo_
   --base-55: hsl(242, 19%, 8%);
   --base-60: hsl(240, 20%, 5%); */
 
-  /* Accent HSL values */
-  --accent-h: 260;
-  --accent-s: 55%;
-  --accent-l: 60%;
-
   --color-black: #0e1319;
   --color-white: #dddddd;
   --color-muted: #8b949e;
-  --color-cyan: #6eb3ef;
-  --color-blue: #179fff;
-  --color-pink: #ca4ac6;
-  --color-teal: #3eb4bf;
-  --color-green: #53cc88;
-  --color-yellow: #ccb952;
-  --color-orange: #ed8b4f;
-  --color-red: #de6d5a;
-  --color-purple: #9e4ff3;
-
-  --color-purple: rgb(166, 128, 255);
-  --color-pink: rgb(255, 151, 207);
-  --color-red: rgb(228, 78, 83);
-  --color-yellow: rgb(230, 232, 118);
-  --color-green: rgb(80, 207, 119);
   --color-cyan: rgb(83, 223, 221);
+  --color-blue: #179fff;
+  --color-pink: rgb(255, 151, 207);
+  --color-teal: #3eb4bf;
+  --color-green: rgb(80, 207, 119);
+  --color-yellow: rgb(230, 232, 118);
+  --color-orange: #ed8b4f;
+  --color-red: rgb(228, 78, 83);
+  --color-purple: rgb(166, 128, 255);
 
   --color-black-rgb: 14, 19, 25;
   --color-white-rgb: 221, 221, 221;
@@ -72,32 +108,11 @@ Created by @labdo_
   --color-red-rgb: 245, 93, 98;
   --color-purple-rgb: 168, 130, 255;
 
-  --color-accent-100: hsl(var(--accent-h), 65%, 73%);
-  --color-accent-100: hsl(var(--accent-h), 90%, 85%);
-  --color-accent-200: hsl(var(--accent-h), 62%, 69%);
-  --color-accent-300: hsl(var(--accent-h), 52%, 64%);
-  --color-accent-400: hsl(var(--accent-h), 45%, 58%);
-  --color-accent-500: hsl(var(--accent-h), 40%, 53%);
-  --color-accent-600: hsl(var(--accent-h), 38%, 49%);
-
-  --text-normal: var(--base-15);
-  --text-muted: var(--base-20);
-  --text-faint: var(--base-35);
-  --bold-color: var(--base-10);
-
-  --inline-title-color: var(--base-05);
-
-  --text-accent: var(--h3-color);
-  --text-accent-hover: var(--h1-color);
-
-  --text-accent: hsl(255, 85%, 75%);
-  --text-accent-hover: hsl(252, 90%, 85%);
-
-  --text-accent: var(--color-accent-200);
-  --text-accent-hover: var(--color-accent-100);
+  --text-accent: hsl(var(--accent-h), 85%, 75%);
+  --text-accent-hover: hsl(var(--accent-h), 90%, 84%);
 
   --text-highlight-bg: var(--base-40);
-  --text-selection: hsla(230, 15%, 25%, 0.5);
+  --text-selection: var(--base-50);
 
   --background-primary: var(--base-60);
   --background-primary-alt: var(--base-55);
@@ -108,29 +123,89 @@ Created by @labdo_
   --background-modifier-form-field: rgba(0, 0, 0, 0.2);
   --background-modifier-border-focus: var(--base-35);
   --background-modifier-border-hover: var(--base-40);
-  --background-modifier-hover: hsla(230, 15%, 25%, 0.4);
+  --background-modifier-hover: hsla(var(--accent-h), 50%, 90%, 0.05);
   --background-modifier-cover: rgba(0, 0, 0, 0.6);
-
-  --ribbon-background: var(--background-secondary);
-  --ribbon-background-collapsed: var(--background-secondary);
-
-  --code-background: var(--background-secondary);
-
-  --modal-border-width: 1px;
-  --modal-border-color: var(--base-45);
-
-  --scrollbar-bg: inherit;
-  --scrollbar-thumb-bg: hsla(252, 100%, 92%, 0.07);
-  --scrollbar-active-thumb-bg: hsla(252, 100%, 92%, 0.11);
 
   --interactive-normal: var(--base-45);
   --interactive-hover: var(--base-40);
+}
 
-  --indentation-guide-color: var(--base-45);
-  --indentation-guide-color-active: var(--base-35);
+.theme-light {
+  /* base colors */
+  --base-05: hsl(var(--accent-h), 17%, 9%);
+  --base-10: hsl(var(--accent-h), 15%, 12%);
+  --base-15: hsl(var(--accent-h), 11%, 15%);
+  --base-20: hsl(var(--accent-h), 10%, 19%);
+  --base-25: hsl(var(--accent-h), 10%, 25%);
+  --base-30: hsl(var(--accent-h), 10%, 35%);
+  --base-35: hsl(var(--accent-h), 10%, 62%);
+  --base-40: hsl(var(--accent-h), 15%, 78%);
+  --base-45: hsl(var(--accent-h), 20%, 86%);
+  --base-50: hsl(var(--accent-h), 30%, 92%);
+  --base-55: hsl(var(--accent-h), 50%, 96%);
+  --base-60: hsl(var(--accent-h), 10%, 98%);
 
-  --prompt-border-width: 1px;
-  --prompt-border-color: var(--base-50);
+  /* --base-05: hsl(240, 17%, 9%);
+  --base-10: hsl(240, 15%, 12%);
+  --base-15: hsl(240, 11%, 15%);
+  --base-20: hsl(240, 10%, 19%);
+  --base-25: hsl(240, 10%, 25%);
+  --base-30: hsl(240, 10%, 35%);
+  --base-35: hsl(240, 10%, 62%);
+  --base-40: hsl(240, 15%, 78%);
+  --base-45: hsl(240, 20%, 86%);
+  --base-50: hsl(240, 30%, 93%);
+  --base-55: hsl(240, 50%, 96%);
+  --base-60: hsl(240, 10%, 98%); */
+
+  --color-black: rgb(15, 20, 26);
+  --color-white: rgb(222, 222, 222);
+  --color-muted: rgb(138, 147, 158);
+  --color-cyan: rgb(8, 200, 197);
+  --color-blue: rgb(26, 159, 255);
+  --color-pink: rgb(212, 73, 147);
+  --color-teal: rgb(44, 174, 186);
+  --color-green: rgb(14, 192, 67);
+  --color-yellow: rgb(229, 199, 0);
+  --color-orange: rgb(248, 119, 33);
+  --color-red: rgb(250, 55, 62);
+  --color-purple: rgb(129, 80, 241);
+
+  --color-black-rgb: 14, 19, 25;
+  --color-white-rgb: 221, 221, 221;
+  --color-muted-rgb: 139, 148, 158;
+  --color-cyan-rgb: 13, 211, 208;
+  --color-blue-rgb: 26, 159, 255;
+  --color-pink-rgb: 212, 73, 147;
+  --color-teal-rgb: 44, 174, 186;
+  --color-green-rgb: 17, 194, 70;
+  --color-yellow-rgb: 229, 199, 0;
+  --color-orange-rgb: 248, 119, 33;
+  --color-red-rgb: 250, 55, 62;
+  --color-purple-rgb: 129, 80, 241;
+
+  --inline-title-color: var(--base-05);
+
+  --text-accent: hsl(var(--accent-h), 85%, 65%);
+  --text-accent-hover: hsl(var(--accent-h), 60%, 45%);
+
+  --text-highlight-bg: var(--base-45);
+  --text-selection: var(--base-50);
+
+  --background-primary: var(--base-60);
+  --background-primary-alt: var(--base-55);
+  --background-secondary: var(--base-55);
+  --background-secondary-alt: var(--base-55);
+
+  --background-modifier-border: var(--base-45);
+  --background-modifier-form-field: rgba(255, 255, 255, 0.5);
+  --background-modifier-border-focus: var(--base-35);
+  --background-modifier-border-hover: var(--base-40);
+  --background-modifier-hover: hsla(var(--accent-h), 80%, 15%, 0.1);
+  --background-modifier-cover: rgba(0, 0, 0, 0.5);
+
+  --interactive-normal: var(--base-50);
+  --interactive-hover: var(--base-45);
 }
 
 /* * Layout */
@@ -176,15 +251,6 @@ body {
 select,
 .dropdown {
   cursor: var(--cursor);
-  background-color: var(--base-45);
-}
-
-.dropdown:hover {
-  background-color: var(--base-40);
-}
-
-.dropdown option {
-  background-color: var(--base-45);
 }
 
 /* * Cursor */
@@ -234,6 +300,10 @@ body {
   --tab-min-width: 92px;
 }
 
+.theme-light {
+  --tab-active-color: var(--base-45);
+}
+
 .mod-windows,
 .mod-linux {
   --frame-left-space: 6px;
@@ -262,7 +332,7 @@ body {
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
   .workspace-tab-header-inner {
-  background-color: var(--base-40);
+  background-color: var(--tab-active-color);
 }
 
 .mod-left-split .workspace-tab-header,
@@ -595,29 +665,11 @@ body {
   --h6-weight: 550;
 
   --inline-title-size: 2rem;
-}
 
-.theme-dark {
-  --h1-color: hsl(255, 65%, 73%);
-  --h2-color: hsl(256, 62%, 69%);
-  --h3-color: hsl(257, 52%, 64%);
-  --h4-color: hsl(258, 45%, 58%);
-  --h5-color: hsl(259, 40%, 53%);
-  --h6-color: hsl(260, 40%, 46%);
-
-  --h1-color: hsl(255, 52%, 72%);
-  --h2-color: hsl(254, 52%, 68%);
-  --h3-color: hsl(253, 52%, 64%);
-  --h4-color: hsl(253, 50%, 60%);
-  --h5-color: hsl(252, 40%, 52%);
-  --h6-color: hsl(251, 38%, 46%);
-
-  /* --h1-color: var(--base-15);
-  --h2-color: var(--base-15);
-  --h3-color: var(--base-15);
-  --h4-color: var(--base-15);
-  --h5-color: var(--base-15);
-  --h6-color: var(--base-15); */
+  --link-decoration: none;
+  --link-decoration-hover: none;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: none;
 }
 
 /* Heading level Indicator */
