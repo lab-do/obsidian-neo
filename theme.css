@@ -247,33 +247,29 @@ body {
   padding-bottom: var(--size-4-6);
 }
 
-/* Dropdown menu button */
-select,
-.dropdown {
-  cursor: var(--cursor);
-}
-
 /* * Cursor */
 body {
   --cursor: pointer;
   --cursor-link: pointer;
 }
 
+select,
+.dropdown,
 .view-header-breadcrumb,
 .workspace-tab-header,
 input[type="checkbox"] {
   cursor: var(--cursor);
 }
 
+/* reset cursor for window buttons */
+body .titlebar-button-container {
+  --cursor: default;
+}
+
 /* windows buttons */
 .titlebar-button-container .titlebar-button:hover {
   --background-modifier-error: rgb(212, 32, 38);
   color: var(--base-05);
-}
-
-/* reset cursor for window buttons */
-body .titlebar-button-container {
-  --cursor: default;
 }
 
 /* new tab image*/
