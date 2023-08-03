@@ -650,12 +650,7 @@ body {
 }
 
 /* Heading level Indicator */
-body .is-live-preview .HyperMD-header-1 .collapse-indicator::before,
-body .is-live-preview .HyperMD-header-2 .collapse-indicator::before,
-body .is-live-preview .HyperMD-header-3 .collapse-indicator::before,
-body .is-live-preview .HyperMD-header-4 .collapse-indicator::before,
-body .is-live-preview .HyperMD-header-5 .collapse-indicator::before,
-body .is-live-preview .HyperMD-header-6 .collapse-indicator::before {
+body:not(.is-mobile) .is-live-preview .collapse-indicator::before {
   content: var(--heading-indicator);
   color: var(--text-faint);
   font-size: 0.7rem;
@@ -666,28 +661,37 @@ body .is-live-preview .HyperMD-header-6 .collapse-indicator::before {
   transform: translateY(-50%);
 }
 
-body .is-live-preview .HyperMD-header-1:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-1:hover {
   --heading-indicator: "H1";
 }
 
-body .is-live-preview .HyperMD-header-2:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-2:hover {
   --heading-indicator: "H2";
 }
 
-body .is-live-preview .HyperMD-header-3:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-3:hover {
   --heading-indicator: "H3";
 }
 
-body .is-live-preview .HyperMD-header-4:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-4:hover {
   --heading-indicator: "H4";
 }
 
-body .is-live-preview .HyperMD-header-5:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-5:hover {
   --heading-indicator: "H5";
 }
 
-body .is-live-preview .HyperMD-header-6:hover {
+body:not(.is-mobile) .is-live-preview .HyperMD-header-6:hover {
   --heading-indicator: "H6";
+}
+
+/* Make room for heading indicator */
+body:not(.is-mobile)
+  .view-content
+  > .markdown-source-view.mod-cm6
+  > .cm-editor
+  > .cm-scroller {
+  padding-left: 56px;
 }
 
 .cm-contentContainer .cm-content .HyperMD-header.HyperMD-header-1.cm-line,
@@ -703,11 +707,6 @@ body .is-live-preview .HyperMD-header-6:hover {
 .markdown-rendered h5,
 .markdown-rendered h6 {
   padding-bottom: 4px;
-}
-
-/* Make room for heading indicator */
-.view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
-  padding-left: 56px;
 }
 
 /* body:not(.heading-indicator-off) .markdown-rendered h1::before,
