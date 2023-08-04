@@ -479,11 +479,21 @@ body {
   height: var(--status-bar-height);
 }
 
-.workspace {
+body:not(.is-mobile) .workspace {
   padding-bottom: var(--status-bar-height);
 }
+
 .mod-root .workspace-tab-container {
   padding-bottom: 0;
+}
+
+/* mobile toolbar  */
+.mobile-toolbar-options-container {
+  --mobile-toolbar-height: 40px;
+}
+
+.mobile-toolbar-option {
+  --at-button-height: 40px;
 }
 
 /*  Scrollbars */
