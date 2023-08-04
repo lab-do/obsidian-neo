@@ -7,8 +7,8 @@ Created by @labdo_
 /* * Colors */
 body {
   --accent-h: 250;
-  --accent-s: 55%;
-  --accent-l: 60%;
+  --accent-s: 80%;
+  --accent-l: 75%;
 
   --h1-color: hsl(var(--accent-h), 52%, 72%);
   --h2-color: hsl(var(--accent-h), 52%, 68%);
@@ -38,6 +38,10 @@ body {
 
   --ribbon-background: var(--background-secondary);
   --ribbon-background-collapsed: var(--background-secondary);
+
+  --interactive-accent-hsl: var(--color-accent-hsl);
+  --interactive-accent: var(--color-accent-1);
+  --interactive-accent-hover: var(--color-accent-2);
 }
 
 .theme-dark {
@@ -65,8 +69,8 @@ body {
   --base-40: hsl(var(--accent-h), 8%, 25%);
   --base-45: hsl(var(--accent-h), 10%, 19%);
   --base-50: hsl(var(--accent-h), 11%, 15%);
-  --base-55: hsl(var(--accent-h), 15%, 12%);
-  --base-60: hsl(var(--accent-h), 14%, 7%);
+  --base-55: hsl(var(--accent-h), 12%, 12%);
+  --base-60: hsl(var(--accent-h), 15%, 9%);
 
   /* base darker */
   /* --base-05: hsl(250, 18%, 93%);
@@ -125,6 +129,11 @@ body {
   --background-modifier-border-hover: var(--base-40);
   --background-modifier-hover: hsla(var(--accent-h), 50%, 90%, 0.05);
   --background-modifier-cover: rgba(0, 0, 0, 0.6);
+
+  --color-accent-hsl: var(--accent-h), var(--accent-s), 70%;
+  --color-accent: hsl(var(--color-accent-hsl));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), 70%);
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), 75%);
 
   --interactive-normal: var(--base-45);
   --interactive-hover: var(--base-40);
@@ -204,8 +213,13 @@ body {
   --background-modifier-hover: hsla(var(--accent-h), 80%, 15%, 0.1);
   --background-modifier-cover: rgba(0, 0, 0, 0.5);
 
-  --interactive-normal: var(--base-50);
-  --interactive-hover: var(--base-45);
+  --color-accent-hsl: var(--accent-h), var(--accent-s), 75%;
+  --color-accent: hsl(var(--color-accent-hsl));
+  --color-accent-1: hsl(var(--accent-h), var(--accent-s), 75%);
+  --color-accent-2: hsl(var(--accent-h), var(--accent-s), 70%);
+
+  --interactive-normal: var(--base-55);
+  --interactive-hover: var(--base-50);
 }
 
 /* * Layout */
