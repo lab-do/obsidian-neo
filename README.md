@@ -1,15 +1,19 @@
 # **Neo Theme**
 
-**Neo** is a theme for [Obsidian](https://obsidian.md/)
+**Neo** is a theme designed for [Obsidian](https://obsidian.md/), with the goal of maintaining the simplicity of the default theme while adding vibrant colors and enhancing the user interface.
 
-![screenshot](assets/cover-hq.png)
+![cover](assets/cover-hq.png)
 
-This theme was initially made for personal use, so it was not designed to be customizable. However, I plan on making the major changes from the default theme optional in the future.
+Please note that this theme was initially made for personal use, so it was not designed to be customizable. However, I do have plans to make customization possible in the future.
+
+## Screenshot
+
+![screenshot](assets/screenshot.png)
 
 ## Recommended Fonts
 
-- [Inter](https://fonts.google.com/specimen/Inter) for the interface and text fonts.
-- [Fira Code](https://fonts.google.com/specimen/Fira+Code) for the monospace font.
+- [Inter](https://fonts.google.com/specimen/Inter) for interface and text fonts.
+- [Fira Code](https://fonts.google.com/specimen/Fira+Code) for monospace font.
 
 ## Credit
 
