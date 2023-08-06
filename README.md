@@ -17,5 +17,5 @@ Please note that this theme was initially made for personal use, so it was not d
 
 ## Credit
 
-- [@colineckert](https://github.com/colineckert)'s [Things theme](https://github.com/colineckert/obsidian-things) for the Kanban styles and inspiration to create this theme.
-- [@Akifyss](https://github.com/Akifyss)'s[Border theme](https://github.com/Akifyss/obsidian-border) for the scrollbars, new page icon and inspiration.
+- [@colineckert](https://github.com/colineckert)'s [Things theme](https://github.com/colineckert/obsidian-things) for the Kanban styles and inspiration.
+- [@Akifyss](https://github.com/Akifyss)'s [Border theme](https://github.com/Akifyss/obsidian-border) for the scrollbars, new page icon and inspiration.
