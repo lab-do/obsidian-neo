@@ -4,18 +4,72 @@ Version 0.0.2
 Created by @labdo_
 ────────────────────────────────────────────────────── */
 
+/* @settings
+id: neo-style
+name: Neo Theme
+settings:
+    -
+        id: appearance
+        title: Appearance
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: theme-variant
+        title: Dark Theme variant
+        description: Variations of dark theme
+        type: class-select
+        allowEmpty: false
+        default: default
+        options:
+            - default
+            - darker
+    -
+        id: accent-affect-bg
+        title: Accent affect Background
+        description: Background colors follow Accent color set in appearance settings
+        type: class-toggle
+        default: false
+    -
+        id: accent-headings-off
+        title: White Headings
+        description: Use white for headings instead of accent color 
+        type: class-toggle
+        default: false
+    -
+        id: features
+        title: Features
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: neo-tabs-off
+        title: Obsidian default tabs
+        description: Restore obsidian default tabs
+        type: class-toggle
+        default: false
+    -
+        id: heading-indicator-off
+        title: Disable Heading Indicator
+        description: Do not show heading level indicator on hover
+        type: class-toggle
+        default: false
+    -
+        id: active-line
+        title: Highlight active line
+        description: Change background color of current active line
+        type: class-toggle
+        default: false
+
+*/
+
 /* * Colors */
 body {
+  --base-hue: 240;
+
   --accent-h: 250;
   --accent-s: 80%;
   --accent-l: 75%;
-
-  --h1-color: hsl(var(--accent-h), 52%, 72%);
-  --h2-color: hsl(var(--accent-h), 52%, 68%);
-  --h3-color: hsl(var(--accent-h), 52%, 64%);
-  --h4-color: hsl(var(--accent-h), 50%, 60%);
-  --h5-color: hsl(var(--accent-h), 40%, 52%);
-  --h6-color: hsl(var(--accent-h), 38%, 46%);
 
   --text-normal: var(--base-15);
   --text-muted: var(--base-20);
@@ -44,6 +98,15 @@ body {
   --interactive-accent-hover: var(--color-accent-2);
 }
 
+body:not(.accent-headings-off) {
+  --h1-color: hsl(var(--accent-h), 52%, 72%);
+  --h2-color: hsl(var(--accent-h), 52%, 68%);
+  --h3-color: hsl(var(--accent-h), 52%, 64%);
+  --h4-color: hsl(var(--accent-h), 50%, 60%);
+  --h5-color: hsl(var(--accent-h), 40%, 52%);
+  --h6-color: hsl(var(--accent-h), 38%, 46%);
+}
+
 .theme-dark {
   /* base */
   /* --base-05: hsl(240, 2%, 93%);
@@ -59,32 +122,18 @@ body {
   --base-55: hsl(240, 15%, 12%);
   --base-60: hsl(240, 17%, 9%); */
 
-  --base-05: hsl(var(--accent-h), 2%, 93%);
-  --base-10: hsl(var(--accent-h), 3%, 82%);
-  --base-15: hsl(var(--accent-h), 4%, 75%);
-  --base-20: hsl(var(--accent-h), 5%, 65%);
-  --base-25: hsl(var(--accent-h), 6%, 56%);
-  --base-30: hsl(var(--accent-h), 6%, 46%);
-  --base-35: hsl(var(--accent-h), 7%, 35%);
-  --base-40: hsl(var(--accent-h), 8%, 25%);
-  --base-45: hsl(var(--accent-h), 10%, 19%);
-  --base-50: hsl(var(--accent-h), 11%, 15%);
-  --base-55: hsl(var(--accent-h), 12%, 12%);
-  --base-60: hsl(var(--accent-h), 15%, 9%);
-
-  /* base darker */
-  /* --base-05: hsl(250, 18%, 93%);
-  --base-10: hsl(249, 14%, 79%);
-  --base-15: hsl(248, 12%, 70%);
-  --base-20: hsl(247, 12%, 60%);
-  --base-25: hsl(247, 10%, 49%);
-  --base-30: hsl(245, 13%, 37%);
-  --base-35: hsl(245, 14%, 26%);
-  --base-40: hsl(244, 16%, 19%);
-  --base-45: hsl(243, 17%, 14%);
-  --base-50: hsl(243, 18%, 11%);
-  --base-55: hsl(242, 19%, 8%);
-  --base-60: hsl(240, 20%, 5%); */
+  --base-05: hsl(var(--base-hue), 2%, 93%);
+  --base-10: hsl(var(--base-hue), 3%, 82%);
+  --base-15: hsl(var(--base-hue), 4%, 75%);
+  --base-20: hsl(var(--base-hue), 5%, 65%);
+  --base-25: hsl(var(--base-hue), 6%, 56%);
+  --base-30: hsl(var(--base-hue), 6%, 46%);
+  --base-35: hsl(var(--base-hue), 7%, 35%);
+  --base-40: hsl(var(--base-hue), 8%, 25%);
+  --base-45: hsl(var(--base-hue), 10%, 19%);
+  --base-50: hsl(var(--base-hue), 11%, 15%);
+  --base-55: hsl(var(--base-hue), 12%, 12%);
+  --base-60: hsl(var(--base-hue), 15%, 9%);
 
   --color-black: #0e1319;
   --color-white: #dddddd;
@@ -139,20 +188,48 @@ body {
   --interactive-hover: var(--base-40);
 }
 
+body:is(.darker).theme-dark {
+  /* --base-05: hsl(250, 18%, 93%);
+  --base-10: hsl(249, 14%, 79%);
+  --base-15: hsl(248, 12%, 70%);
+  --base-20: hsl(247, 12%, 60%);
+  --base-25: hsl(247, 10%, 49%);
+  --base-30: hsl(245, 13%, 37%);
+  --base-35: hsl(245, 14%, 26%);
+  --base-40: hsl(244, 16%, 19%);
+  --base-45: hsl(243, 17%, 14%);
+  --base-50: hsl(243, 18%, 11%);
+  --base-55: hsl(242, 19%, 8%);
+  --base-60: hsl(240, 20%, 5%); */
+
+  --base-05: hsl(var(--base-hue), 18%, 93%);
+  --base-10: hsl(var(--base-hue), 14%, 79%);
+  --base-15: hsl(var(--base-hue), 12%, 70%);
+  --base-20: hsl(var(--base-hue), 12%, 60%);
+  --base-25: hsl(var(--base-hue), 10%, 49%);
+  --base-30: hsl(var(--base-hue), 13%, 37%);
+  --base-35: hsl(var(--base-hue), 14%, 26%);
+  --base-40: hsl(var(--base-hue), 16%, 19%);
+  --base-45: hsl(var(--base-hue), 17%, 16%);
+  --base-50: hsl(var(--base-hue), 18%, 13%);
+  --base-55: hsl(var(--base-hue), 18%, 10%);
+  --base-60: hsl(var(--base-hue), 16%, 7%);
+}
+
 .theme-light {
   /* base colors */
-  --base-05: hsl(var(--accent-h), 17%, 9%);
-  --base-10: hsl(var(--accent-h), 15%, 12%);
-  --base-15: hsl(var(--accent-h), 11%, 15%);
-  --base-20: hsl(var(--accent-h), 10%, 19%);
-  --base-25: hsl(var(--accent-h), 10%, 25%);
-  --base-30: hsl(var(--accent-h), 10%, 35%);
-  --base-35: hsl(var(--accent-h), 10%, 62%);
-  --base-40: hsl(var(--accent-h), 15%, 78%);
-  --base-45: hsl(var(--accent-h), 20%, 86%);
-  --base-50: hsl(var(--accent-h), 30%, 92%);
-  --base-55: hsl(var(--accent-h), 50%, 96%);
-  --base-60: hsl(var(--accent-h), 10%, 98%);
+  --base-05: hsl(var(--base-hue), 17%, 9%);
+  --base-10: hsl(var(--base-hue), 15%, 12%);
+  --base-15: hsl(var(--base-hue), 11%, 15%);
+  --base-20: hsl(var(--base-hue), 10%, 19%);
+  --base-25: hsl(var(--base-hue), 10%, 25%);
+  --base-30: hsl(var(--base-hue), 10%, 35%);
+  --base-35: hsl(var(--base-hue), 10%, 62%);
+  --base-40: hsl(var(--base-hue), 15%, 78%);
+  --base-45: hsl(var(--base-hue), 20%, 86%);
+  --base-50: hsl(var(--base-hue), 30%, 92%);
+  --base-55: hsl(var(--base-hue), 50%, 96%);
+  --base-60: hsl(var(--base-hue), 10%, 98%);
 
   /* --base-05: hsl(240, 17%, 9%);
   --base-10: hsl(240, 15%, 12%);
@@ -222,8 +299,19 @@ body {
   --interactive-hover: var(--base-50);
 }
 
+body:is(.accent-affect-bg) {
+  --base-hue: var(--accent-h);
+}
+
 /* * Layout */
 body {
+  /* Animations */
+  --anim-duration-none: 0;
+  --anim-duration-superfast: 70ms;
+  --anim-duration-fast: 140ms;
+  --anim-duration-moderate: 250ms;
+  --anim-duration-slow: 400ms;
+  /* Radius */
   --radius-s: 4px;
   --radius-m: 6px;
   --radius-l: 10px;
@@ -320,17 +408,18 @@ body {
   --frame-right-space: 132px;
 }
 
-.workspace-tab-header::after,
-.workspace-tab-header::before {
+body:not(.neo-tabs-off) .workspace-tab-header::after,
+body:not(.neo-tabs-off) .workspace-tab-header::before {
   display: none;
 }
 
-.workspace-tab-header.is-active {
+body:not(.neo-tabs-off) .workspace-tab-header.is-active {
   background-color: transparent;
   box-shadow: unset;
 }
 
-.mod-root
+body:not(.neo-tabs-off)
+  .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header
   .workspace-tab-header-inner {
@@ -338,7 +427,8 @@ body {
   margin: 4px 0;
 }
 
-.mod-root
+body:not(.neo-tabs-off)
+  .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
   .workspace-tab-header-inner {
@@ -351,8 +441,14 @@ body {
   border-radius: var(--radius-m);
 }
 
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
+body:not(.neo-tabs-off)
+  .mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header,
+body:not(.neo-tabs-off)
+  .mod-root
+  .workspace-tabs:not(.mod-stacked)
+  .workspace-tab-header.is-active {
   padding: 0px 2px 6px;
   min-width: var(--tab-min-width);
 }
@@ -368,9 +464,9 @@ body {
   gap: 4px;
 }
 
-.mod-root .workspace-tab-header-container-inner {
-  margin: -1px -5px 0px;
-  padding: 1px 15px 1px;
+body:not(.neo-tabs-off) .mod-root .workspace-tab-header-container-inner {
+  margin: -1px 5px 0px;
+  padding: 1px 4px 1px 8px;
 }
 
 /* Changes the resize handles to not overlap the tab area */
@@ -660,7 +756,9 @@ body {
 }
 
 /* Heading level Indicator */
-body:not(.is-mobile) .is-live-preview .collapse-indicator::before {
+body:not(.is-mobile):not(.heading-indicator-off)
+  .is-live-preview
+  .collapse-indicator::before {
   content: var(--heading-indicator);
   color: var(--text-faint);
   font-size: 0.7rem;
@@ -696,7 +794,7 @@ body:not(.is-mobile) .is-live-preview .HyperMD-header-6:hover {
 }
 
 /* Make room for heading indicator */
-body:not(.is-mobile)
+body:not(.is-mobile):not(.heading-indicator-off)
   .view-content
   > .markdown-source-view.mod-cm6
   > .cm-editor
@@ -719,29 +817,15 @@ body:not(.is-mobile)
   padding-bottom: 4px;
 }
 
-/* body:not(.heading-indicator-off) .markdown-rendered h1::before,
-body:not(.heading-indicator-off) .markdown-preview-view h1::before,
-body:not(.heading-indicator-off) .is-live-preview .HyperMD-header-1::before {
-  margin-right: 6px;
-  content: " ";
-  display: inline-block;
-  width: 3px;
-  border-radius: var(--radius-m);
-  background-color: var(--color-green);
-  height: calc(0.8em);
-  transform: translateY(0.2em);
-} */
-
 /* Highlight selected line  */
 /* from border theme: https://github.com/Akifyss/obsidian-border */
-/* body:not(.line-active-disable)
+body:is(.active-line)
   .markdown-source-view
   .cm-scroller
   .cm-line.cm-active:not(:has(.mk-note-footer, .mk-floweditor-container)) {
-  background-color: hsla(240, 10%, 25%, 0.2);
-  background-color: var(--line-active-bg);
+  background-color: hsla(var(--accent-h), 6%, 25%, 0.2);
   border-radius: var(--radius-s);
-} */
+}
 
 /* Table  */
 body {

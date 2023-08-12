@@ -1,14 +1,39 @@
 # **Neo Theme**
 
-**Neo** is a theme designed for [Obsidian](https://obsidian.md/), with the goal of maintaining the simplicity of the default theme while adding vibrant colors and enhancing the user interface.
+**Neo** is a theme designed for [Obsidian](https://obsidian.md/), with the goal of maintaining the simplicity of the default theme while adding more colors and enhancing the user interface.
 
-![cover](assets/cover-hq.png)
+![cover](assets/cover-hq.webp)
 
-Please note that this theme was initially made for personal use, so it was not designed to be customizable. However, I do have plans to make customization possible in the future.
+## Features
 
-## Screenshot
+- Dark and light theme support
+- Alternate Tabs
+- Headings indicator
+- Pointer cursor for clickable elements
+- Alternate checkboxes
+- Accent color affect background colors \*
+- Active line indicator \*
 
-![screenshot](assets/screenshot.png)
+\* _Turned off by default, need [style settings](https://github.com/mgmeyers/obsidian-style-settings) plugin to turn on_
+
+## Screenshots
+
+![screenshot](assets/screenshot.webp)
+
+![checkboxs](assets/checkbox.webp)
+
+<details>
+  <summary>Light Theme</summary>
+  
+![screenshot-light](assets/screenshot-light.webp)
+
+</details>
+
+## Supported plugins
+
+- Dataview
+- Kanban
+- Hover editor
 
 ## Recommended Fonts
 
@@ -17,5 +42,5 @@ Please note that this theme was initially made for personal use, so it was not d
 
 ## Credit
 
-- [@colineckert](https://github.com/colineckert)'s [Things theme](https://github.com/colineckert/obsidian-things) for the Kanban styles and inspiration.
-- [@Akifyss](https://github.com/Akifyss)'s [Border theme](https://github.com/Akifyss/obsidian-border) for the scrollbars, new page icon and inspiration.
+- [@colineckert](https://github.com/colineckert)'s [Things theme](https://github.com/colineckert/obsidian-things)
+- [@Akifyss](https://github.com/Akifyss)'s [Border theme](https://github.com/Akifyss/obsidian-border)
