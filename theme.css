@@ -65,7 +65,7 @@ settings:
 
 /* * Colors */
 body {
-  --base-hue: 240;
+  --base-hue: 245;
 
   --accent-h: 250;
   --accent-s: 80%;
@@ -79,7 +79,7 @@ body {
   --code-background: var(--background-secondary);
 
   --inline-title-color: var(--base-05);
-  --tab-active-color: var(--base-40);
+  --tab-active-color: var(--base-45);
 
   --prompt-border-width: 1px;
   --prompt-border-color: var(--base-50);
@@ -176,7 +176,7 @@ body:not(.accent-headings-off) {
   --background-modifier-form-field: rgba(0, 0, 0, 0.2);
   --background-modifier-border-focus: var(--base-35);
   --background-modifier-border-hover: var(--base-40);
-  --background-modifier-hover: hsla(var(--accent-h), 50%, 90%, 0.05);
+  --background-modifier-hover: hsla(var(--base-hue), 50%, 80%, 0.05);
   --background-modifier-cover: rgba(0, 0, 0, 0.6);
 
   --color-accent-hsl: var(--accent-h), var(--accent-s), 70%;
@@ -188,7 +188,7 @@ body:not(.accent-headings-off) {
   --interactive-hover: var(--base-40);
 }
 
-body:is(.darker).theme-dark {
+.theme-dark.darker {
   /* --base-05: hsl(250, 18%, 93%);
   --base-10: hsl(249, 14%, 79%);
   --base-15: hsl(248, 12%, 70%);
@@ -202,18 +202,21 @@ body:is(.darker).theme-dark {
   --base-55: hsl(242, 19%, 8%);
   --base-60: hsl(240, 20%, 5%); */
 
-  --base-05: hsl(var(--base-hue), 18%, 93%);
+  --base-05: hsl(var(--base-hue), 16%, 94%);
   --base-10: hsl(var(--base-hue), 14%, 79%);
   --base-15: hsl(var(--base-hue), 12%, 70%);
   --base-20: hsl(var(--base-hue), 12%, 60%);
   --base-25: hsl(var(--base-hue), 10%, 49%);
-  --base-30: hsl(var(--base-hue), 13%, 37%);
-  --base-35: hsl(var(--base-hue), 14%, 26%);
-  --base-40: hsl(var(--base-hue), 16%, 19%);
-  --base-45: hsl(var(--base-hue), 17%, 16%);
-  --base-50: hsl(var(--base-hue), 18%, 13%);
-  --base-55: hsl(var(--base-hue), 18%, 10%);
-  --base-60: hsl(var(--base-hue), 16%, 7%);
+  --base-30: hsl(var(--base-hue), 10%, 37%);
+  --base-35: hsl(var(--base-hue), 12%, 26%);
+  --base-40: hsl(var(--base-hue), 13%, 19%);
+  --base-45: hsl(var(--base-hue), 12%, 15%);
+  --base-50: hsl(var(--base-hue), 10%, 12%);
+  --base-55: hsl(var(--base-hue), 8%, 8%);
+  --base-60: hsl(var(--base-hue), 8%, 5%);
+
+  --text-accent: hsl(var(--accent-h), 75%, 75%);
+  --text-accent-hover: hsl(var(--accent-h), 75%, 84%);
 }
 
 .theme-light {
@@ -228,8 +231,10 @@ body:is(.darker).theme-dark {
   --base-40: hsl(var(--base-hue), 15%, 78%);
   --base-45: hsl(var(--base-hue), 20%, 86%);
   --base-50: hsl(var(--base-hue), 30%, 92%);
-  --base-55: hsl(var(--base-hue), 50%, 96%);
-  --base-60: hsl(var(--base-hue), 10%, 98%);
+  --base-55: hsl(var(--base-hue), 25%, 96%);
+  --base-60: hsl(var(--base-hue), 15%, 98%);
+
+  --color-accent-50: hsl(var(--base-hue), 70%, 95%);
 
   /* --base-05: hsl(240, 17%, 9%);
   --base-10: hsl(240, 15%, 12%);
@@ -279,15 +284,15 @@ body:is(.darker).theme-dark {
   --text-selection: var(--base-50);
 
   --background-primary: var(--base-60);
-  --background-primary-alt: var(--base-55);
-  --background-secondary: var(--base-55);
-  --background-secondary-alt: var(--base-55);
+  --background-primary-alt: var(--color-accent-50);
+  --background-secondary: var(--color-accent-50);
+  --background-secondary-alt: var(--color-accent-50);
 
   --background-modifier-border: var(--base-45);
   --background-modifier-form-field: rgba(255, 255, 255, 0.5);
   --background-modifier-border-focus: var(--base-35);
   --background-modifier-border-hover: var(--base-40);
-  --background-modifier-hover: hsla(var(--accent-h), 80%, 15%, 0.1);
+  --background-modifier-hover: hsla(var(--base-hue), 80%, 25%, 0.1);
   --background-modifier-cover: rgba(0, 0, 0, 0.5);
 
   --color-accent-hsl: var(--accent-h), var(--accent-s), 75%;
@@ -399,7 +404,8 @@ body {
 }
 
 .theme-light {
-  --tab-active-color: var(--base-45);
+  --tab-active-color: var(--base-60);
+  --tab-active-shadow: inset 0 0 0 1px var(--background-modifier-border);
 }
 
 .mod-windows,
@@ -428,11 +434,11 @@ body:not(.neo-tabs-off)
 }
 
 body:not(.neo-tabs-off)
-  .mod-root
   .workspace-tabs:not(.mod-stacked)
   .workspace-tab-header.is-active
   .workspace-tab-header-inner {
   background-color: var(--tab-active-color);
+  box-shadow: var(--tab-active-shadow);
 }
 
 .mod-left-split .workspace-tab-header,
