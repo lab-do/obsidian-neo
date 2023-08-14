@@ -25,15 +25,21 @@ settings:
             - default
             - darker
     -
-        id: accent-affect-bg
-        title: Accent affect Background
-        description: Background colors follow Accent color set in appearance settings
-        type: class-toggle
-        default: false
-    -
         id: accent-headings-off
         title: White Headings
         description: Use white for headings instead of accent color 
+        type: class-toggle
+        default: false
+    -
+        id: accent-affect-bg
+        title: Accent affect Background
+        description: Background colors follow Accent color (set in appearance settings)
+        type: class-toggle
+        default: false
+    -
+        id: no-kanban-styles
+        title: Disable kanban styles
+        description: Switch to kanban plugin default styles
         type: class-toggle
         default: false
     -
@@ -1216,6 +1222,41 @@ body:not(.no-kanban-styles) .kanban-plugin {
   --dot-spacing: 20px;
   --dot-size: 1px;
 }
+
+.theme-light .kanban-plugin {
+  --kanban-item-background: var(--base-60);
+  --kanban-item-active-background: var(--color-accent-50);
+  --kanban-item-new-background: var(--base-60);
+}
+
+.theme-dark .kanban-plugin {
+  --kanban-item-background: var(--base-50);
+  --kanban-item-active-background: var(--base-60);
+  --kanban-item-new-background: var(--base-60);
+}
+
+body:not(.no-kanban-styles) .kanban-plugin__item-title-wrapper {
+  padding: 8px 8px 8px 12px;
+}
+
+.kanban-plugin__item-title-wrapper {
+  background: var(--kanban-item-background);
+}
+
+.kanban-plugin__item-title-wrapper[data-ignore-drag="true"] {
+  background: var(--kanban-item-active-background);
+}
+
+body:not(.no-kanban-styles)
+  .kanban-plugin__item-form
+  .kanban-plugin__item-input-wrapper {
+  background-color: var(--kanban-item-new-background);
+}
+
+body:not(.no-kanban-styles) .kanban-plugin__lane-items > div {
+  margin-top: 6px;
+}
+
 body:not(.no-kanban-styles) .kanban-plugin__board {
   background-image: radial-gradient(
     circle,
@@ -1230,25 +1271,32 @@ body:not(.no-kanban-styles) .kanban-plugin__board {
 body:not(.no-kanban-styles) .kanban-plugin__board > div {
   margin: 0 auto;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__item-form {
   border-top: none;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__lane-header-wrapper {
   border-bottom: 0;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin button {
   box-shadow: none;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper > button:hover {
   color: var(--text-normal);
   background: var(--background-modifier-hover);
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper {
   border-top: none;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__lane {
   border: 1px solid transparent;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__item-content-wrapper {
   box-shadow: none;
 }
@@ -1258,18 +1306,14 @@ body:not(.no-kanban-styles):not(.is-mobile)
   > textarea:focus {
   box-shadow: none;
 }
+
 body:not(.no-kanban-styles) .kanban-plugin__item-input-actions button,
 body:not(.no-kanban-styles) .kanban-plugin__lane-input-actions button {
   font-size: var(--font-adaptive-small);
 }
-body:not(.no-kanban-styles)
-  .kanban-plugin__lane-header-wrapper
-  .kanban-plugin__grow-wrap
-  > textarea,
-body:not(.no-kanban-styles)
-  .kanban-plugin__lane-input-wrapper
-  .kanban-plugin__grow-wrap
-  > textarea {
+
+.kanban-plugin__lane-header-wrapper .kanban-plugin__grow-wrap > textarea,
+.kanban-plugin__grow-wrap > textarea {
   background: transparent;
 }
 
