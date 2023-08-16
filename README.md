@@ -7,6 +7,7 @@
 ## Features
 
 - Dark and light theme support
+- Mobile support
 - Alternate Tabs
 - Headings indicator
 - Pointer cursor for clickable elements
@@ -31,9 +32,10 @@
 
 ## Supported plugins
 
-- Dataview
-- Kanban
-- Hover editor
+- [Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+- [Kanban](https://github.com/mgmeyers/obsidian-kanban)
+- [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
+- [Hover editor](https://github.com/nothingislost/obsidian-hover-editor)
 
 ## Recommended Fonts
 
