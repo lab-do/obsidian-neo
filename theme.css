@@ -152,7 +152,7 @@ body:not(.accent-headings-off) {
   --color-yellow: rgb(230, 232, 118);
   --color-orange: #ed8b4f;
   --color-red: rgb(228, 78, 83);
-  --color-purple: rgb(166, 128, 255);
+  --color-purple: rgb(149, 128, 255);
 
   --color-black-rgb: 14, 19, 25;
   --color-white-rgb: 221, 221, 221;
@@ -165,7 +165,7 @@ body:not(.accent-headings-off) {
   --color-yellow-rgb: 224, 222, 113;
   --color-orange-rgb: 237, 139, 79;
   --color-red-rgb: 245, 93, 98;
-  --color-purple-rgb: 168, 130, 255;
+  --color-purple-rgb: 149, 128, 255;
 
   --text-accent: hsl(var(--accent-h), 85%, 75%);
   --text-accent-hover: hsl(var(--accent-h), 90%, 84%);
@@ -266,7 +266,7 @@ body:not(.accent-headings-off) {
   --color-yellow: rgb(229, 199, 0);
   --color-orange: rgb(248, 119, 33);
   --color-red: rgb(250, 55, 62);
-  --color-purple: rgb(129, 80, 241);
+  --color-purple: rgb(111, 85, 241);
 
   --color-black-rgb: 14, 19, 25;
   --color-white-rgb: 221, 221, 221;
@@ -279,7 +279,7 @@ body:not(.accent-headings-off) {
   --color-yellow-rgb: 229, 199, 0;
   --color-orange-rgb: 248, 119, 33;
   --color-red-rgb: 250, 55, 62;
-  --color-purple-rgb: 129, 80, 241;
+  --color-purple-rgb: 111, 85, 241;
 
   --inline-title-color: var(--base-05);
 
