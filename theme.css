@@ -1,8 +1,7 @@
-/*───────────────────────────────────────────────────────
-Neo
-Version 0.0.2
-Created by @labdo_
-────────────────────────────────────────────────────── */
+/*──────────
+Neo Theme
+By @labdo_
+────────── */
 
 /* @settings
 id: neo-style
@@ -40,6 +39,12 @@ settings:
         id: no-kanban-styles
         title: Disable kanban styles
         description: Switch to kanban plugin default styles
+        type: class-toggle
+        default: false
+    -
+        id: no-dv-table-border
+        title: Hide dataview table borders
+        description:
         type: class-toggle
         default: false
     -
@@ -844,6 +849,7 @@ body {
   --table-header-background: var(--background-secondary);
   --table-header-background-hover: var(--background-secondary);
   --table-border-width: 2px;
+  --table-border-color: var(--background-modifier-border);
 }
 
 .markdown-preview-view th,
@@ -855,6 +861,8 @@ body {
   tr
   th {
   font-size: 1rem;
+  font-size: var(--font-small);
+  font-weight: 600;
   text-transform: capitalize;
   padding: 10px 16px;
 }
@@ -864,19 +872,27 @@ body {
   padding: 6px 16px;
 }
 
-/* dataview */
-.markdown-source-view:not(.cards) .markdown-rendered .table-view-table,
-.markdown-source-view:not(.cards) .markdown-rendered .table-view-table th,
-.markdown-source-view:not(.cards) .markdown-rendered .table-view-table td {
-  border: 2px solid var(--table-border-color);
-}
-
 .markdown-rendered .table-view-table tbody {
   font-size: var(--font-small);
 }
 
 .markdown-rendered .table-view-table > tbody > tr:hover {
   background-color: var(--table-header-background-hover) !important;
+}
+
+body:not(.cards) .table-view-table th {
+  border-bottom: var(--table-border-width) solid var(--table-border-color);
+}
+
+body:not(.cards):not(.no-dv-table-border) .table-view-table,
+body:not(.cards):not(.no-dv-table-border) .table-view-table th,
+body:not(.cards):not(.no-dv-table-border) .table-view-table td {
+  border: var(--table-border-width) solid var(--table-border-color);
+}
+
+/* Dataview horizontal scroll */
+.block-language-dataviewjs {
+  overflow-x: scroll;
 }
 
 /* Tags */
