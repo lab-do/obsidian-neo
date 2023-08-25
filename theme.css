@@ -597,13 +597,21 @@ body {
 
 .status-bar {
   padding: 0 16px;
-  width: calc(100% - 43px);
   width: 100%;
-  min-height: 16px;
+  height: var(--status-bar-height);
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .status-bar-item {
-  height: var(--status-bar-height);
+  flex-shrink: 0;
+  order: 2;
+}
+
+.status-bar-item.plugin-backlink {
+  order: 1;
 }
 
 body:not(.is-mobile) .workspace {
