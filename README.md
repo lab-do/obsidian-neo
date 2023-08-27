@@ -12,16 +12,16 @@
 - Headings indicator
 - Pointer cursor for clickable elements
 - Alternate checkboxes
-- Accent color affect background colors \*
-- Active line indicator \*
-
-\* _Turned off by default, need [style settings](https://github.com/mgmeyers/obsidian-style-settings) plugin to turn on_
 
 ## Screenshots
 
 ![screenshot](assets/screenshot.webp)
 
 ![checkboxs](assets/checkbox.webp)
+
+Task plugin statuses for progress checkboxes
+
+![checkbox progress statuses](assets/progress-status.webp)
 
 <details>
   <summary>Light Theme</summary>
@@ -33,7 +33,9 @@
 ## Supported plugins
 
 - [Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+- [Tasks](https://github.com/obsidian-tasks-group/obsidian-tasks)
 - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
+- [Style settings](https://github.com/mgmeyers/obsidian-style-settings)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Hover editor](https://github.com/nothingislost/obsidian-hover-editor)
 
