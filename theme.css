@@ -895,25 +895,14 @@ body {
 }
 
 body:not(.no-dv-table-border)
-  .markdown-preview-view:not(.cards)
+  :is(.markdown-preview-view, .markdown-source-view):not(.cards)
   .table-view-table,
 body:not(.no-dv-table-border)
-  .markdown-source-view:not(.cards)
-  .table-view-table,
-body:not(.no-dv-table-border)
-  .markdown-source-view:not(.cards)
+  :is(.markdown-preview-view, .markdown-source-view):not(.cards)
   .table-view-table
   th,
 body:not(.no-dv-table-border)
-  .markdown-preview-view:not(.cards)
-  .table-view-table
-  th,
-body:not(.no-dv-table-border)
-  .markdown-preview-view:not(.cards)
-  .table-view-table
-  td,
-body:not(.no-dv-table-border)
-  .markdown-source-view:not(.cards)
+  :is(.markdown-preview-view, .markdown-source-view):not(.cards)
   .table-view-table
   td {
   border: var(--table-border-width) solid var(--table-border-color);
@@ -1276,10 +1265,7 @@ li[data-task="3"] > input:checked,
 li[data-task="3"] > p > input:checked,
 input[data-task="4"]:checked,
 li[data-task="4"] > input:checked,
-li[data-task="4"] > p > input:checked,
-input[data-task="5"]:checked,
-li[data-task="5"] > input:checked,
-li[data-task="5"] > p > input:checked {
+li[data-task="4"] > p > input:checked {
   background: transparent;
   background-image: none;
   width: var(--checkbox-progress-width);
@@ -1290,107 +1276,52 @@ li[data-task="5"] > p > input:checked {
   overflow: hidden;
   mask-image: none;
   -webkit-mask-image: none;
-}
 
-input[data-task="0"]:checked:after,
-li[data-task="0"] > input:checked:after,
-li[data-task="0"] > p > input:checked:after {
-  display: none;
-}
-
-input[data-task="1"]:checked:after,
-li[data-task="1"] > input:checked:after,
-li[data-task="1"] > p > input:checked:after {
-  content: " ";
-  display: block;
-  background: var(--interactive-accent);
-  width: calc(var(--checkbox-progress-width) * 2.5 / 10);
-  height: 100%;
-  margin-top: 1px;
-  border-radius: 10px;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-input[data-task="2"]:checked:after,
-li[data-task="2"] > input:checked:after,
-li[data-task="2"] > p > input:checked:after {
-  content: " ";
-  display: block;
-  background: var(--interactive-accent);
-  width: calc(var(--checkbox-progress-width) * 5 / 10);
-  height: 100%;
-  margin-top: 1px;
-  border-radius: 10px;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-input[data-task="3"]:checked:after,
-li[data-task="3"] > input:checked:after,
-li[data-task="3"] > p > input:checked:after {
-  content: " ";
-  display: block;
-  background: var(--interactive-accent);
-  width: calc(var(--checkbox-progress-width) * 7.5 / 10);
-  height: 100%;
-  margin-top: 1px;
-  border-radius: 10px;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-input[data-task="4"]:checked:after,
-li[data-task="4"] > input:checked:after,
-li[data-task="4"] > p > input:checked:after {
-  content: " ";
-  display: block;
-  background: var(--interactive-accent);
-  width: calc(var(--checkbox-progress-width) * 10 / 10);
-  height: 100%;
-  margin-top: 1px;
-  border-radius: 10px;
-  mask-image: none;
-  -webkit-mask-image: none;
-}
-
-@media (hover: hover) {
-  input[data-task="0"]:checked:hover,
-  input[data-task="1"]:checked:hover,
-  input[data-task="2"]:checked:hover,
-  input[data-task="3"]:checked:hover,
-  input[data-task="4"]:checked:hover {
+  &:hover {
     background-color: transparent;
+
+    &::after {
+      background: var(--interactive-accent-hover);
+    }
+}
+
+  &::after {
+  content: " ";
+  display: block;
+  background: var(--interactive-accent);
+    width: calc(var(--checkbox-progress-width) * var(--checkbox-progress-frac));
+  height: 100%;
+    top: 0;
+  border-radius: 10px;
+  mask-image: none;
+  -webkit-mask-image: none;
+    transition: width 0.15s ease-out;
   }
-  input[data-task="0"]:checked:hover:after,
-  input[data-task="1"]:checked:hover:after,
-  input[data-task="2"]:checked:hover:after,
-  input[data-task="3"]:checked:hover:after,
-  input[data-task="4"]:checked:hover:after {
-    content: " ";
-    display: block;
-    background: var(--checkbox-color-hover);
-    height: 100%;
-    margin-top: 1px;
-    border-radius: 10px;
-    mask-image: none;
-    -webkit-mask-image: none;
+}
+
+input[data-task="0"],
+li[data-task="0"] {
+  --checkbox-progress-frac: 0;
+}
+
+input[data-task="1"],
+li[data-task="1"] {
+  --checkbox-progress-frac: 0.25;
+}
+
+input[data-task="2"],
+li[data-task="2"] {
+  --checkbox-progress-frac: 0.5;
+}
+
+input[data-task="3"],
+li[data-task="3"] {
+  --checkbox-progress-frac: 0.75;
   }
-  input[data-task="0"]:checked:hover:after {
-    width: calc(var(--checkbox-progress-width) * 2.5 / 10);
-  }
-  input[data-task="1"]:checked:hover:after {
-    width: calc(var(--checkbox-progress-width) * 5 / 10);
-  }
-  input[data-task="2"]:checked:hover:after {
-    width: calc(var(--checkbox-progress-width) * 7.5 / 10);
-  }
-  input[data-task="3"]:checked:hover:after {
-    width: calc(var(--checkbox-progress-width) * 10 / 10);
-  }
-  input[data-task="4"]:checked:hover:after {
-    width: calc(var(--checkbox-progress-width) * 0 / 10);
-  }
+
+input[data-task="4"],
+li[data-task="4"] {
+  --checkbox-progress-frac: 1;
 }
 
 /* * Kanban */
