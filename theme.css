@@ -857,7 +857,7 @@ body:is(.active-line)
 body {
   --table-header-background: var(--background-secondary);
   --table-header-background-hover: var(--background-secondary);
-  --table-border-width: 2px;
+  --table-border-width: 1px;
   --table-border-color: var(--background-modifier-border);
 }
 
@@ -889,13 +889,33 @@ body {
   background-color: var(--table-header-background-hover) !important;
 }
 
-body:not(.cards) .table-view-table th {
+.markdown-rendered.mod-cm6:not(.cards) .table-view-table th,
+.markdown-rendered:not(.cards) .table-view-table th {
   border-bottom: var(--table-border-width) solid var(--table-border-color);
 }
 
-body:not(.cards):not(.no-dv-table-border) .table-view-table,
-body:not(.cards):not(.no-dv-table-border) .table-view-table th,
-body:not(.cards):not(.no-dv-table-border) .table-view-table td {
+body:not(.no-dv-table-border)
+  .markdown-preview-view:not(.cards)
+  .table-view-table,
+body:not(.no-dv-table-border)
+  .markdown-source-view:not(.cards)
+  .table-view-table,
+body:not(.no-dv-table-border)
+  .markdown-source-view:not(.cards)
+  .table-view-table
+  th,
+body:not(.no-dv-table-border)
+  .markdown-preview-view:not(.cards)
+  .table-view-table
+  th,
+body:not(.no-dv-table-border)
+  .markdown-preview-view:not(.cards)
+  .table-view-table
+  td,
+body:not(.no-dv-table-border)
+  .markdown-source-view:not(.cards)
+  .table-view-table
+  td {
   border: var(--table-border-width) solid var(--table-border-color);
 }
 
