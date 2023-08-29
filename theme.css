@@ -36,6 +36,12 @@ settings:
         type: class-toggle
         default: false
     -
+        id: neutral-bg
+        title: Neutral Background colors
+        description: Remove colors from background
+        type: class-toggle
+        default: false
+    -
         id: no-kanban-styles
         title: Disable kanban styles
         description: Switch to kanban plugin default styles
@@ -119,20 +125,6 @@ body:not(.accent-headings-off) {
 }
 
 .theme-dark {
-  /* base */
-  /* --base-05: hsl(240, 2%, 93%);
-  --base-10: hsl(240, 3%, 82%);
-  --base-15: hsl(240, 4%, 75%);
-  --base-20: hsl(240, 5%, 65%);
-  --base-25: hsl(240, 6%, 56%);
-  --base-30: hsl(240, 6%, 46%);
-  --base-35: hsl(240, 7%, 35%);
-  --base-40: hsl(240, 8%, 25%);
-  --base-45: hsl(240, 10%, 19%);
-  --base-50: hsl(240, 11%, 15%);
-  --base-55: hsl(240, 15%, 12%);
-  --base-60: hsl(240, 17%, 9%); */
-
   --base-05: hsl(var(--base-hue), 2%, 93%);
   --base-10: hsl(var(--base-hue), 3%, 82%);
   --base-15: hsl(var(--base-hue), 4%, 75%);
@@ -145,6 +137,21 @@ body:not(.accent-headings-off) {
   --base-50: hsl(var(--base-hue), 11%, 15%);
   --base-55: hsl(var(--base-hue), 12%, 12%);
   --base-60: hsl(var(--base-hue), 16%, 9%);
+
+  &.neutral-bg {
+    --base-05: hsl(0, 0%, 93%);
+    --base-10: hsl(0, 0%, 82%);
+    --base-15: hsl(0, 0%, 75%);
+    --base-20: hsl(0, 0%, 65%);
+    --base-25: hsl(0, 0%, 56%);
+    --base-30: hsl(0, 0%, 46%);
+    --base-35: hsl(0, 0%, 35%);
+    --base-40: hsl(0, 0%, 25%);
+    --base-45: hsl(0, 0%, 19%);
+    --base-50: hsl(0, 0%, 15%);
+    --base-55: hsl(0, 0%, 12%);
+    --base-60: hsl(0, 0%, 9%);
+  }
 
   --color-black: #0e1319;
   --color-white: #dddddd;
@@ -200,20 +207,7 @@ body:not(.accent-headings-off) {
 }
 
 .theme-dark.darker {
-  /* --base-05: hsl(250, 18%, 93%);
-  --base-10: hsl(249, 14%, 79%);
-  --base-15: hsl(248, 12%, 70%);
-  --base-20: hsl(247, 12%, 60%);
-  --base-25: hsl(247, 10%, 49%);
-  --base-30: hsl(245, 13%, 37%);
-  --base-35: hsl(245, 14%, 26%);
-  --base-40: hsl(244, 16%, 19%);
-  --base-45: hsl(243, 17%, 14%);
-  --base-50: hsl(243, 18%, 11%);
-  --base-55: hsl(242, 19%, 8%);
-  --base-60: hsl(240, 20%, 5%); */
-
-  --base-05: hsl(var(--base-hue), 16%, 94%);
+  --base-05: hsl(var(--base-hue), 16%, 90%);
   --base-10: hsl(var(--base-hue), 14%, 79%);
   --base-15: hsl(var(--base-hue), 12%, 70%);
   --base-20: hsl(var(--base-hue), 12%, 60%);
@@ -228,10 +222,24 @@ body:not(.accent-headings-off) {
 
   --text-accent: hsl(var(--accent-h), 75%, 75%);
   --text-accent-hover: hsl(var(--accent-h), 75%, 84%);
+
+  &.neutral-bg {
+    --base-05: hsl(0, 0%, 90%);
+    --base-10: hsl(0, 0%, 79%);
+    --base-15: hsl(0, 0%, 70%);
+    --base-20: hsl(0, 0%, 60%);
+    --base-25: hsl(0, 0%, 49%);
+    --base-30: hsl(0, 0%, 37%);
+    --base-35: hsl(0, 0%, 26%);
+    --base-40: hsl(0, 0%, 19%);
+    --base-45: hsl(0, 0%, 15%);
+    --base-50: hsl(0, 0%, 12%);
+    --base-55: hsl(0, 0%, 8%);
+    --base-60: hsl(0, 0%, 5%);
+  }
 }
 
 .theme-light {
-  /* base colors */
   --base-05: hsl(var(--base-hue), 17%, 9%);
   --base-10: hsl(var(--base-hue), 15%, 12%);
   --base-15: hsl(var(--base-hue), 11%, 15%);
@@ -244,21 +252,23 @@ body:not(.accent-headings-off) {
   --base-50: hsl(var(--base-hue), 30%, 92%);
   --base-55: hsl(var(--base-hue), 25%, 96%);
   --base-60: hsl(var(--base-hue), 15%, 98%);
-
   --color-accent-50: hsl(var(--base-hue), 70%, 95%);
 
-  /* --base-05: hsl(240, 17%, 9%);
-  --base-10: hsl(240, 15%, 12%);
-  --base-15: hsl(240, 11%, 15%);
-  --base-20: hsl(240, 10%, 19%);
-  --base-25: hsl(240, 10%, 25%);
-  --base-30: hsl(240, 10%, 35%);
-  --base-35: hsl(240, 10%, 62%);
-  --base-40: hsl(240, 15%, 78%);
-  --base-45: hsl(240, 20%, 86%);
-  --base-50: hsl(240, 30%, 93%);
-  --base-55: hsl(240, 50%, 96%);
-  --base-60: hsl(240, 10%, 98%); */
+  &.neutral-bg {
+    --base-05: hsl(0, 0%, 9%);
+    --base-10: hsl(0, 0%, 12%);
+    --base-15: hsl(0, 0%, 15%);
+    --base-20: hsl(0, 0%, 19%);
+    --base-25: hsl(0, 0%, 25%);
+    --base-30: hsl(0, 0%, 35%);
+    --base-35: hsl(0, 0%, 62%);
+    --base-40: hsl(0, 0%, 78%);
+    --base-45: hsl(0, 0%, 86%);
+    --base-50: hsl(0, 0%, 92%);
+    --base-55: hsl(0, 0%, 96%);
+    --base-60: hsl(0, 0%, 98%);
+    --color-accent-50: var(--base-55);
+  }
 
   --color-black: rgb(15, 20, 26);
   --color-white: rgb(222, 222, 222);
