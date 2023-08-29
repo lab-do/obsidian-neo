@@ -1436,6 +1436,10 @@ body:not(.no-kanban-styles) .kanban-plugin__lane-input-actions button {
   background: transparent;
 }
 
+.kanban-plugin__item-prefix-button-wrapper input[type="checkbox"] {
+  filter: none;
+}
+
 /* * Hover editor */
 .popover.hover-editor .popover-titlebar {
   --he-title-bar-active-bg: var(--interactive-accent);
