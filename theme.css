@@ -617,10 +617,14 @@ body {
 
 .status-bar-item {
   flex-shrink: 0;
-  order: 2;
+  order: 3;
 }
 
 .status-bar-item.plugin-backlink {
+  order: 2;
+}
+
+.status-bar-item.plugin-properties {
   order: 1;
 }
 
