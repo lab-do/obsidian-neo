@@ -54,6 +54,12 @@ settings:
         type: class-toggle
         default: false
     -
+        id: table-auto-capitalization
+        title: Table headers capitalization
+        description: Title capitalize table headers
+        type: class-toggle
+        default: false
+    -
         id: features
         title: Features
         type: heading
@@ -886,8 +892,11 @@ body {
   font-size: 1rem;
   font-size: var(--font-small);
   font-weight: 600;
-  text-transform: capitalize;
   padding: 10px 16px;
+}
+
+body:is(.table-auto-capitalization) tr th {
+  text-transform: capitalize;
 }
 
 .markdown-preview-view td,
